@@ -7,5 +7,4 @@
 * Users can log in
 * Users can find info for items/characters
 * Users can check off challenges they have completed/ characters they have unlocked
-* Users can leave comments on each item page
 * Users can view details about items, characters, and challenges
