@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet"
+          href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.css"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a href="/main" class="navbar-brand">RoR2-Guide</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="/items">Items</a></li>
+                        <li><a href="/characters">Characters</a></li>
+                        <li><a href="/challenges">Challenges</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if session.get('logged_in_username') %}
+                        <li><a>{{ session.get('logged_in_username') }}</a></li>
+                        <li><a href="/logout" class="logout-btn">Log Out</a></li>
+                        {% else %}
+                        <li>
+                            <a href="/login" class="login-btn">Log in</a>
+                        </li>
+                        <li>
+                            <a href="/signup" class="signup-btn">Sign Up</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                    <div class="alert alert-warning">{{ message }}</div>
+                {% endfor %}
+            {% endwith %}
+
+            {% block body %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

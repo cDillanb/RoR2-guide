@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>{{ challenge.name }}</h1>
+    <div class="row">
+        <div class="col-xs-10">
+            <h4>{{ challenge.description }}</h4>
+        </div>
+        <div class="col-xs-10">
+            <form method="POST">
+                {% if completed_challenge_id %}
+                    <h3>Challenge Completed</h3>
+                    <input type="submit" class="btn btn-lg btn-primary" value="Undo" name="submit-btn">
+                {% else %}
+                    <div class="form-check">
+                        <input type="checkbox" value="{{ challenge.id }}" class="form-check-input" id="flexCheckDefault" required name="checkbox">
+                        <label class="form-check-label" for="flexCheckChecked"><h2>Completed</h2></label>
+                        <input type="submit" value="Apply" class="btn btn-lg btn-primary" name="submit-btn">
+                    </div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+{% endblock %}

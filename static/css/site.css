@@ -1,0 +1,75 @@
+* {
+    font-family: 'bombardier';
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'bombardier';
+    src: url("../fonts/bombardier/Bombardier-Regular.ttf")
+}
+
+.login-btn, .signup-btn,  .username{
+    color: rgb(118, 171, 206);
+}
+
+a, a:visited, a:active {
+    color: inherit;
+    text-decoration-line: inherit;
+}
+
+.navbar {
+    background-color: rgb(21, 0, 78);
+}
+
+.category {
+    font-size: 30px;
+}
+
+.well.white {
+    background-color: rgb(202, 202, 202);
+}
+
+.well.green {
+    background-color: rgb(138, 255, 138);
+}
+
+.well.red {
+    background-color: rgb(248, 110, 110);
+}
+
+.well.orange {
+    background-color: rgb(235, 167, 43);
+}
+
+.well.yellow {
+    background-color: rgb(253, 253, 110);
+}
+
+.well.blue {
+    background-color: rgb(100, 100, 253);
+}
+
+body {
+    background-color: rgb(118, 171, 206);
+}
+
+div.well {
+    background-color: rgb(202, 202, 202);
+}
+
+div.description {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis ellipsis;
+}
+
+.form-check-input {
+    width: 20px;
+    height: 20px;
+}
+
+hr {
+    background-color: rgb(0, 24, 61);
+    height: 5px;
+}

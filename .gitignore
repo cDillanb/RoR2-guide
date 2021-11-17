@@ -1,0 +1,13 @@
+database.txt
+MVP.txt
+__pycache__
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+RoR2-Guide/
+db/
+test-script.py

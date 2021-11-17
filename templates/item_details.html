@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>{{ item.name }}</h1>
+    <div class="row">
+        <div class="col-xs-10">
+            <h4>{{ item.description }}</h4>
+            <h2>Rarity</h2>
+            <h4>{{ item.rarity }}</h4>
+        </div>
+        {% if item.challenge_id %}
+            <div class="col-xs-8">
+                <h2>Challenge</h2>
+                <h4>{{ challenges[item.challenge_id - 1].name }}</h4>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

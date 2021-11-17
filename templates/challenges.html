@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% if session.get('logged_in_id') %}
+        {% if challenge_count < 112 %}
+            <h3>You've completed {{ challenge_count }} Challenges, {{ 112 - challenge_count }} to go!</h3>
+        {% elif challenge_count == 112 %}
+            <h3>You've completed EVERY Challenge! Impressive!</h3>
+        {% endif %}
+    {% endif %}
+    <h1>Challenges</h1>
+    <br>
+    {% for challenge in challenges %}
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="well {% if challenge.id in challenges_completed %}green{% endif %}">
+                <h4><a href="/challenge/{{ challenge.id }}">{{ challenge.name }}</a></h4>
+                <div class="description">
+                    <p>{{ challenge.description }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

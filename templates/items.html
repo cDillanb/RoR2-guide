@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <h1>Items</h1>
+    <br>
+    {% for item in items %}
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+            <div class="well {% if 'Common' in item.rarity %}white 
+            {% elif 'Uncommon' in item.rarity %}green
+            {% elif 'Legendary' in item.rarity %}red
+            {% elif 'Lunar' in item.rarity %}blue
+            {% elif 'Boss/Planet' in item.rarity %}yellow
+            {% else %}orange
+            {% endif %}">
+                <h4><a href="/item/{{ item.id }}">{{ item.name }}</a></h4>
+                <div class="description">
+                    <p>{{ item.description }}</p>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
